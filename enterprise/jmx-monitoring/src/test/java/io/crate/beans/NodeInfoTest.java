@@ -27,6 +27,7 @@ import org.elasticsearch.cluster.ClusterState;
 import org.elasticsearch.cluster.metadata.IndexMetadata;
 import org.elasticsearch.cluster.metadata.Metadata;
 import org.elasticsearch.cluster.node.DiscoveryNode;
+import org.elasticsearch.cluster.node.DiscoveryNodeRole;
 import org.elasticsearch.cluster.node.DiscoveryNodes;
 import org.elasticsearch.cluster.routing.IndexRoutingTable;
 import org.elasticsearch.cluster.routing.RoutingTable;
@@ -43,7 +44,6 @@ import org.junit.runner.RunWith;
 
 
 import java.util.Map;
-import java.util.Set;
 import java.util.UUID;
 
 import static io.crate.testing.MoreMatchers.withFeature;
@@ -254,7 +254,7 @@ public class NodeInfoTest {
                                  id,
                                  buildNewFakeTransportAddress(),
                                  Map.of(),
-                                 Set.of(DiscoveryNode.Role.MASTER, DiscoveryNode.Role.DATA),
+                                 DiscoveryNodeRole.ROLES,
                                  Version.CURRENT);
     }
 
